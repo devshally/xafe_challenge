@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:xafe_challenge/app/core/widgets/action_button.dart';
+import 'package:xafe_challenge/app/features/authentication/signin/presentation/screens/sign_in.dart';
+import 'package:xafe_challenge/app/features/authentication/signup/presentation/screens/name_input.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -43,9 +46,17 @@ class SplashScreen extends StatelessWidget {
             Expanded(
               child: SizedBox(),
             ),
-            ActionButton(
-              text: 'Login',
-              onTap: () {},
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: ActionButton(
+                text: 'Login',
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => SignInScreen(),
+                  ),
+                ),
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 15.0),
@@ -57,6 +68,13 @@ class SplashScreen extends StatelessWidget {
                   ),
                   children: [
                     TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => SignUpScreen(),
+                              ),
+                            ),
                       text: 'Create an account',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
