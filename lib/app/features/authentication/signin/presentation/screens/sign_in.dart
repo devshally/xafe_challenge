@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:xafe_challenge/app/core/index.dart';
 import 'package:xafe_challenge/app/core/widgets/action_button.dart';
 import 'package:xafe_challenge/app/features/authentication/signin/data/user_sign_in.dart';
 
@@ -146,7 +147,13 @@ class SignInScreen extends StatelessWidget {
             ),
             ActionButton(
               onTap: () {
-                Provider.of<SignIn>(context, listen: false).signIn();
+                // Provider.of<SignIn>(context, listen: false).signIn();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Index(),
+                  ),
+                );
               },
               text: 'Login',
             ),

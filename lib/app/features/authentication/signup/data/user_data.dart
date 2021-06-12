@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:xafe_challenge/app/features/authentication/signup/presentation/screens/email_verification.dart';
 
 class UserData extends ChangeNotifier {
   final _auth = FirebaseAuth.instance;
