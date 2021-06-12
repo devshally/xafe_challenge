@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:xafe_challenge/app/core/homescreen.dart';
+import 'package:xafe_challenge/app/features/budget/presentation/screens/budget_screen.dart';
+import 'package:xafe_challenge/app/features/categories/presentation/screens/categories_screen.dart';
 
 class Index extends StatefulWidget {
   static const String id = 'index_page';
@@ -14,8 +17,8 @@ class _IndexState extends State<Index> {
 
   final List<Widget> _children = [
     HomeScreen(),
-    // Categories(),
-    // Budget(),
+    CategoriesScreen(),
+    BudgetScreen(),
   ];
 
   @override
@@ -55,8 +58,8 @@ class _IndexState extends State<Index> {
             label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.remove_circle_outline_rounded,
+            icon: FaIcon(
+              FontAwesomeIcons.stopCircle,
             ),
             label: 'Budget',
           ),
