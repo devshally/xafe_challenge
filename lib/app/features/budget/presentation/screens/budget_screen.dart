@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xafe_challenge/app/features/budget/data/list_grid.dart';
+import 'package:xafe_challenge/app/features/budget/presentation/screens/add_budget.dart';
 
 class BudgetScreen extends StatelessWidget {
   const BudgetScreen({Key? key}) : super(key: key);
@@ -69,10 +70,20 @@ class BudgetScreen extends StatelessWidget {
                         15.0,
                       ),
                     ),
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 30.0,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 30.0,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => AddBudget(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
