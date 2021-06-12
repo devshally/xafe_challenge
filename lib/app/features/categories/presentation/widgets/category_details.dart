@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:xafe_challenge/app/features/expenses/data/models/data.dart';
 import 'package:xafe_challenge/app/features/expenses/data/models/expense.dart';
 
-class BudgetDetails extends StatelessWidget {
+class CategoryDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Padding _buildRecentExpenses(BuildContext, Expense expense) {
+    Padding _buildRecentExpenses(BuildContext, Expense categorySamples) {
       return Padding(
         padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
         child: Column(
@@ -17,7 +17,7 @@ class BudgetDetails extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      expense.emoji,
+                      categorySamples.emoji,
                       style: TextStyle(
                         fontSize: 25.0,
                       ),
@@ -29,14 +29,14 @@ class BudgetDetails extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          expense.name,
+                          categorySamples.name,
                           style: TextStyle(
                             fontFamily: 'Euclid Circular',
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          expense.date,
+                          categorySamples.date,
                           style: TextStyle(
                             fontFamily: 'Euclid Circular',
                             color: Colors.grey[400],
@@ -48,16 +48,16 @@ class BudgetDetails extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[200],
+                    color: Colors.orange.withOpacity(0.25),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(5.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
                     child: Text(
-                      expense.amount,
+                      categorySamples.amount,
                       style: TextStyle(
-                        fontFamily: 'Euclid Circular',
-                      ),
+                          fontFamily: 'Euclid Circular', color: Colors.orange),
                     ),
                   ),
                 ),
@@ -69,7 +69,7 @@ class BudgetDetails extends StatelessWidget {
     }
 
     return Container(
-      height: MediaQuery.of(context).size.height * 0.7,
+      height: MediaQuery.of(context).size.height * 0.75,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -79,11 +79,11 @@ class BudgetDetails extends StatelessWidget {
         ),
       ),
       child: ListView.separated(
-        itemCount: expenses.length,
+        itemCount: categorySamples.length,
         separatorBuilder: (BuildContext context, int index) => Divider(),
         itemBuilder: (BuildContext context, int index) {
-          Expense expense = expenses[index];
-          return _buildRecentExpenses(context, expense);
+          Expense categorySample = categorySamples[index];
+          return _buildRecentExpenses(context, categorySample);
         },
       ),
     );
