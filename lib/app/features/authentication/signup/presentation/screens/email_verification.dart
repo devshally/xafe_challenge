@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:xafe_challenge/app/core/index.dart';
 import 'package:xafe_challenge/app/core/widgets/action_button.dart';
 import 'package:xafe_challenge/app/features/authentication/signup/data/user_data.dart';
 import 'package:xafe_challenge/app/features/authentication/signup/presentation/widgets/signUpDetails.dart';
@@ -75,13 +76,12 @@ class SignUpScreen4 extends StatelessWidget {
               height: 20.0,
             ),
             ActionButton(
-              onTap: () {},
-              // onTap: () => Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (_) => SignUpScreen3(),
-              //   ),
-              // ),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Index(),
+                ),
+              ),
               text: 'Signup',
             ),
           ],

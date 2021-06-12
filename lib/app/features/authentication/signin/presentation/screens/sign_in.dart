@@ -147,7 +147,7 @@ class SignInScreen extends StatelessWidget {
             ),
             ActionButton(
               onTap: () {
-                // Provider.of<SignIn>(context, listen: false).signIn();
+                Provider.of<SignIn>(context, listen: false).signIn();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
