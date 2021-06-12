@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:xafe_challenge/app/core/widgets/bottom_sheet_menu.dart';
 import 'package:xafe_challenge/app/core/widgets/spending_details.dart';
 import 'package:xafe_challenge/app/core/widgets/stat_button.dart';
 import 'package:xafe_challenge/app/core/widgets/timeline_selector.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  Widget _buildBottomSheet(BuildContext context) {
+    return BottomSheetMenu();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +39,35 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     TimelineSelector(),
                     Container(
+                      width: 40.0,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            builder: (ctx) {
+                              return FractionallySizedBox(
+                                heightFactor: 0.4,
+                                child: _buildBottomSheet(context),
+                              );
+                            },
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20.0),
+                                topRight: Radius.circular(20.0),
+                              ),
+                            ),
+                          );
+                        },
                         icon: FaIcon(
                           FontAwesomeIcons.pen,
                           color: Color(0xFF094DFF),
+                          size: 20.0,
                         ),
                       ),
                     ),

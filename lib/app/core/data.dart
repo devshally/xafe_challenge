@@ -27,3 +27,9 @@ List<Transaction> transactions = [
   transaction3,
   transaction4,
 ];
+
+List<String> menuItems = [
+  'Add an Expense',
+  'Edit budget',
+  'Delete budget',
+];
