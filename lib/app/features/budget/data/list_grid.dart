@@ -21,13 +21,13 @@ List<Widget> gridButtons = [
     amount: '35',
     color: Colors.green.shade500,
     shade: Colors.green.shade100,
-    currentValue: 70,
+    currentValue: 35,
   ),
   GridButton(
     text: 'Clothing',
     amount: '235',
     color: Colors.orange.shade500,
     shade: Colors.orange.shade100,
-    currentValue: 70,
+    currentValue: 50,
   ),
 ];

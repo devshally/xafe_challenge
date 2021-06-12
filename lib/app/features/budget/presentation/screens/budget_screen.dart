@@ -71,6 +71,8 @@ class BudgetScreen extends StatelessWidget {
                     ),
                     child: Icon(
                       Icons.add,
+                      color: Colors.white,
+                      size: 30.0,
                     ),
                   ),
                 ),
