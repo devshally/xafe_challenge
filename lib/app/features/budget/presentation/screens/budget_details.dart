@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xafe_challenge/app/features/budget/presentation/widgets/budget_details.dart';
 import 'package:xafe_challenge/app/features/budget/presentation/widgets/budget_row.dart';
+import 'package:xafe_challenge/app/features/expenses/data/presentation/screens/add_expense.dart';
 
 class Budget extends StatelessWidget {
   const Budget({Key? key}) : super(key: key);
@@ -53,7 +54,14 @@ class Budget extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => AddExpense(),
+                            ),
+                          );
+                        },
                         icon: Icon(
                           Icons.add,
                           color: Colors.white,
